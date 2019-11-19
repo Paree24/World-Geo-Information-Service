@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <title>API</title>
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/custom.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="d-flex align-items-center p-3 px-md-4 bg-white border-bottom box-shadow">
+            <img src="/images/logo.png"/ height="50" width="50">
+            <h5 class="my-0 mr-md-auto font-weight-normal">WORLD GEO INFORMATION SERVICE</h5>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="/">Home</a>
+                <a class="p-2 text-dark" href="api">API</a>
+                <a class="p-2 text-dark" href="search">Search</a>
+                <a class="p-2 text-dark" href="dataviz">DataViz</a>
+            </nav>
+            <a class="btn btn-outline-primary" href="adminlogin">Admin</a>
+        </div>
+        <br>
+        <br>
+        <div class="offset-md-1">    
+        <h1 class="display-4">Use our simple public API to get JSON data right in your program</h1> <br>    
+        <h3>API Structure</h3> <br>           
+        <div class="row">
+            <div class="col-md-5">
+                <p class="lead">Get JSON data by using the following url format:</p> 
+                <code>/api/table/column/value</code> <br> <br>
+                <p class="lead">You can use the following for table names: </p>
+                <ol class="lead">
+                    <li>Countries</li>
+                    <li>Cities</li>
+                    <li>Deserts</li>
+                    <li>Mountains</li>
+                    <li>Rivers</li>
+                </ol>
+                <p class="lead">You can use the following for column names: </p>
+                <ol class="lead">
+                    <li>Country</li>
+                    <li>City</li>
+                    <li>Desert</li>
+                    <li>Mountain</li>
+                    <li>River</li>
+                </ol>
+                <p class="lead">You can then use a corresponding value </p>
+                <p class="lead">Here is an example:</p>
+                <code>
+                    /api/Countries/Country/India
+                </code> <br><br>
+                <p class="lead">You can use the API to get data inside your program: </p>
+                <code>
+                    import urllib.request, json <br>
+                    from pprint import pprint <br>
+                    url = "http://localhost:3000/api/Countries/Country/India" <br>
+                    response = urllib.request.urlopen(url) <br>
+                    data = json.loads(response.read()) <br>
+                    pprint(data) <br>
+                </code><br><br>
+            </div>
+            <div class="col-md-3"> 
+                <img src="/images/api.jpg" alt="Image not loaded yet">
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Search</title>
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/custom.css" rel="stylesheet">
+
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #2974e5;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 24px;
+  padding: 2px;
+  width: 120px;
+  height: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:15px;
+  margin-top: 30px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.form-control {
+   
+	margin-left: 0.75%;
+  width: 60%;
+    
+}
+</style>
+</head>
+ <body>
+        <div class="d-flex align-items-center p-3 px-md-4 bg-white border-bottom box-shadow">
+            <img src="/images/logo.png"/ height="50" width="50">
+            <h5 class="my-0 mr-md-auto font-weight-normal">WORLD GEO INFORMATION SERVICE</h5>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="/">Home</a>
+                <a class="p-2 text-dark" href="api">API</a>
+                <a class="p-2 text-dark" href="search">Search</a>
+                <a class="p-2 text-dark" href="dataviz">DataViz</a>
+            </nav>
+            <a class="btn btn-outline-primary" href="adminlogin">Admin</a>
+        </div>
+        <br>
+        <div class='offset-md-1'>
+        <h1 class="display-4">Search Database</h1>
+        <br>
+        <p>Please go to <a href="api">API</a> page to see the list of tables and columns</p><br>
+        <form role='form' action="/search" method="POST">
+					<input type="text" class="form-control" name="table" value="Countries" /><br />
+          <input type="text" class="form-control" name="column" value="Country" /><br />
+					<input type="text" class="form-control" name="name" value="India" /><br />
+					<input class="button" type="submit" value="Search" />
+		    </form>
+        <br>
+        <br>
+        <h1>Result</h1>
+        <table class="table">
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+          </tr>
+          {{#data}}
+          <tr>
+            <td>{{key}}</td>
+            <td>{{value}}</td>
+          </tr>
+          {{/data}}
+        </table>
+        </div>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Admin Login</title>
+        <link href="/css/bootstrap.css" rel="stylesheet">
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #2974e5;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 2px;
+  width: 160px;
+  height: 60px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+footer {
+  position:absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.3rem;
+  background-color: #efefef;
+  text-align: center;
+}
+</style>
+	    </head>
+        <body class="text-center">
+        <form class="form-signin" action='admin' method="post">
+            <img class="mb-4" src="/images/logo.png" alt="Logo Here" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Admin Login</h1>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+			<br>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name='password' id="inputPassword" class="form-control" placeholder="Password" required>
+			<br>            
+			<div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="button" style="vertical-align:middle"><span>Login </span></button>
+        </form>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </body>
+	  <footer> <p class="mt-5 mb-3 text-muted">Project by Pareekshith U S Katti and Ponnanna M B<br>&copy; 2019-2020</p></footer>
+</html>

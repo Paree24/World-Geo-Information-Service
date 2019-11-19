@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Admin</title>
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/custom.css" rel="stylesheet">
+
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #2974e5;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 24px;
+  padding: 2px;
+  width: 120px;
+  height: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:15px;
+  margin-top: 30px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.form-control {
+   
+	margin-left: 0.75%;
+    
+}
+</style>
+    </head>
+    <body>
+        <div class="d-flex align-items-center p-3 px-md-4 bg-white border-bottom box-shadow">
+            <img src="/images/logo.png"/ height="50" width="50">
+            <h5 class="my-0 mr-md-auto font-weight-normal">WORLD GEO INFORMATION SERVICE</h5>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="/">Home</a>
+                <a class="p-2 text-dark" href="api">API</a>
+                <a class="p-2 text-dark" href="search">Search</a>
+                <a class="p-2 text-dark" href="dataviz">DataViz</a>
+            </nav>
+            <a class="btn btn-outline-primary" href="/logout">logout</a>
+        </div>
+        <div align = "center">
+        <br>
+        <h4>Status: {{status}} </h4><br>
+        <hr>
+        <h3>&nbsp;Insert New Superuser</h1>
+        <form role="form" action="insertadmin" method="post">  
+            <label>&nbsp;&nbsp;&nbsp;Email address</label>                 
+            <input type="email" class="form-control" name="email" placeholder="Enter email">            
+            <label>&nbsp;&nbsp;&nbsp;Password</label>                 
+            <input type="password" class="form-control" name="password" placeholder="Password">    
+            <button type="submit" class="button">Submit</button>             
+        </form>
+		<br><hr><br>
+        <h3>&nbsp;Delete Existing Superuser</h1>
+        <form role="form" action="deleteadmin" method="post">  
+            <label>&nbsp;&nbsp;&nbsp;Email address</label>                 
+            <input type="email" class="form-control" name="email" placeholder="Enter email">               
+            <button type="submit" class="button">Submit</button>             
+        </form>
+		<br><hr><br>
+        <h3>&nbsp;Update Superuser Credentials</h1>
+        <form role="form" action="updateadmin" method="post">  
+            <label>&nbsp;&nbsp;&nbsp;Email address</label>                 
+            <input type="email" class="form-control" name="email" placeholder="Enter email"> 
+            <label>&nbsp;&nbsp;&nbsp;New email address</label>                 
+            <input type="email" class="form-control" name="newemail" placeholder="Enter new email">            
+            <label>&nbsp;&nbsp;&nbsp;Password</label>                 
+            <input type="password" class="form-control" name="password" placeholder="Password">    
+            <button type="submit" class="button">Submit</button>             
+        </form>
+    <br><hr><br>
+        <h3>&nbsp;Insert Content</h1>
+        <form role="form" action="insertcontent" method="post">  
+            <label>&nbsp;&nbsp;&nbsp;Table Name</label>                 
+            <input type="text" class="form-control" name="table" placeholder="Enter Table Name">            
+            <label>&nbsp;&nbsp;&nbsp;Values</label>                 
+            <input type="text" class="form-control" name="values" placeholder="Enter Comma Seperated Values with Quotes">    
+            <button type="submit" class="button">Submit</button>             
+        </form>
+        </div>
+		<br><hr><br>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </body> <footer> <p class="mt-5 mb-3 text-muted">Project by Pareekshith U S Katti and Ponnanna M B<br>&copy; 2019-2020</p></footer>
+</html>
